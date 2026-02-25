@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WB Lawn Masters LLC | Lawn Care, Landscaping & Snow Removal | Livingston County</title>
+  <meta name="description" content="WB Lawn Masters LLC provides lawn mowing, cleanups, mulch installs, landscaping, and snow removal (residential & commercial) across Livingston County, MI." />
+
+  <style>
+    :root{
+      --bg:#0b0f0c;
+      --card:#101612;
+      --text:#f3f6f3;
+      --muted:#b7c2ba;
+      --green:#2fb14a;
+      --green2:#1f8d38;
+      --border:rgba(255,255,255,.12);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:#0a0d0b;
+      color:var(--text);
+      line-height:1.45;
+      padding-bottom:78px; /* space for sticky bottom bar */
+    }
+    a{color:inherit}
+
+    .container{width:min(1100px, 92vw); margin:0 auto}
+
+    /* Header */
+    .site-header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(10,13,11,.78);
+      backdrop-filter:saturate(160%) blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; min-width:0}
+    .logo{width:44px; height:44px; border-radius:12px; background:#fff; object-fit:cover; flex:0 0 auto}
+    .brand-text{min-width:0}
+    .brand-name{font-weight:800; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .brand-sub{font-size:13px; color:var(--muted)}
+    .nav{display:flex; gap:14px; flex-wrap:wrap}
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      padding:10px 10px;
+      border-radius:10px;
+    }
+    .nav a:hover{color:var(--text); background:rgba(255,255,255,.06)}
+
+    /* Hero */
+    .hero{position:relative; min-height:72vh; display:grid; align-items:center}
+    .hero-bg{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.72)),
+        /* STRIPED LAWN HERO BACKGROUND */
+        url("https://i.postimg.cc/hzLSr0P4/IMG-0974.jpg") center/cover no-repeat;
+      filter:saturate(1.05);
+    }
+    .hero-inner{position:relative; padding:28px 0 36px}
+    .hero-card{
+      background:rgba(8,11,9,.72);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      border-radius:28px;
+      padding:26px;
+    }
+    h1{font-size: clamp(32px, 4vw, 54px); line-height:1.05; margin:0 0 12px}
+    .lead{font-size:18px; color:#e8efe9; margin:0 0 18px; max-width:62ch}
+    .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin:0 0 14px}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      text-decoration:none;
+      font-weight:800;
+    }
+    .btn:hover{background:rgba(255,255,255,.10)}
+    .btn-primary{
+      background: linear-gradient(180deg, var(--green), var(--green2));
+      border-color: rgba(0,0,0,.0);
+      color:#071108;
+    }
+    .btn-primary:hover{filter:brightness(1.02)}
+    .btn-ghost{color:#eef6ef}
+    .btn-small{padding:10px 14px; border-radius:14px}
+    .btn-dark{background:rgba(255,255,255,.10)}
+
+    /* Pills */
+    .pill-row{display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 0}
+    .pill{
+      display:inline-flex; align-items:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+      color:#f2f6f2;
+      font-weight:650;
+      font-size:14px;
+    }
+
+    /* Sections */
+    .section{padding:44px 0}
+    .section.alt{background:rgba(255,255,255,.03); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
+    h2{font-size:34px; margin:0 0 6px}
+    .section-sub{margin:0 0 18px; color:var(--muted)}
+    .subhead{margin:22px 0 10px}
+
+    /* Cards grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 6;
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .card h3{margin:0 0 6px}
+    .card p{margin:0; color:var(--muted)}
+    .card-accent{
+      background: linear-gradient(180deg, rgba(47,177,74,.16), rgba(255,255,255,.04));
+      border-color: rgba(47,177,74,.28);
+    }
+
+    /* Before / after */
+    .before-after{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .before-after figure{margin:0; padding:0}
+    .before-after figcaption{margin:0 0 8px; color:var(--muted); font-weight:700}
+    .before-after img{
+      width:100%;
+      height:auto;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .gallery img{
+      width:100%;
+      height: 210px;
+      object-fit:cover;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+    }
+
+    /* Contact */
+    .contact-line{margin:16px 0 0; color:var(--muted)}
+    .footer-meta{margin-top:14px; display:grid; gap:6px; color:var(--muted)}
+    .small{font-size:13px}
+
+    /* Sticky bottom bar (Call Now stays while scrolling) */
+    .sticky-bar{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      z-index:60;
+      background:rgba(10,13,11,.86);
+      backdrop-filter:saturate(160%) blur(10px);
+      border-top:1px solid var(--border);
+    }
+    .sticky-inner{
+      width:min(1100px, 92vw);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 0;
+      color:var(--muted);
+    }
+    .sticky-left{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+    .sticky-title{
+      color:var(--text);
+      font-weight:800;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sticky-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    @media (max-width: 840px){
+      .nav{display:none}
+      .card{grid-column: span 12}
+      .before-after{grid-template-columns: 1fr}
+      .gallery{grid-template-columns: repeat(2, 1fr)}
+      .gallery img{height:190px}
+    }
+    @media (max-width: 420px){
+      .gallery{grid-template-columns: 1fr}
+      .gallery img{height:220px}
+      .sticky-inner{align-items:flex-start}
+      .sticky-actions{width:100%; justify-content:stretch}
+      .sticky-actions a{flex:1}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="WB Lawn Masters LLC Home">
+        <img class="logo" src="https://i.postimg.cc/Yj1cy3BH/D56033B5-0D2F-4B73-948C-7928B6AD8D47.jpg" alt="WB Lawn Masters LLC logo" />
+        <div class="brand-text">
+          <div class="brand-name">WB Lawn Masters LLC</div>
+          <div class="brand-sub">Serving all of Livingston County</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg" role="img" aria-label="Striped lawn hero background image"></div>
+      <div class="container hero-inner">
+        <div class="hero-card">
+          <h1>Clean cuts. Sharp edges.<br/>Property care done right.</h1>
+          <p class="lead">
+            Professional lawn mowing, cleanups, mulch installs, landscaping, and <strong>snow removal</strong> — done right and on time across Livingston County.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Request a Free Estimate</a>
+            <a class="btn btn-ghost" href="tel:15176729714">Call 517-672-9714</a>
+            <a class="btn btn-ghost" href="mailto:wblawnmastersllc@gmail.com?subject=Free%20Estimate%20Request">Email Us</a>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">Reliable Scheduling</span>
+            <span class="pill">Commercial-Grade Equipment</span>
+            <span class="pill">Detail-Oriented Finish</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="section-sub">Residential & small commercial work across Livingston County.</p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Lawn Mowing</h3>
+            <p>Weekly / bi-weekly mowing with clean trimming and blow-off.</p>
+          </article>
+
+          <article class="card">
+            <h3>Edging & Detail Work</h3>
+            <p>Sharp edges along walks/driveways plus clean lines around beds.</p>
+          </article>
+
+          <article class="card">
+            <h3>Mulch & Bed Refresh</h3>
+            <p>Fresh mulch installs, bed shaping, and curb-appeal upgrades.</p>
+          </article>
+
+          <article class="card">
+            <h3>Spring / Fall Cleanup</h3>
+            <p>Leaf removal, debris hauling, and seasonal yard resets.</p>
+          </article>
+
+          <article class="card">
+            <h3>Light Landscaping</h3>
+            <p>Planting, minor trimming, and neat property maintenance.</p>
+          </article>
+
+          <article class="card">
+            <h3>Ongoing Maintenance</h3>
+            <p>One-time jobs or recurring maintenance plans available.</p>
+          </article>
+
+          <article class="card card-accent">
+            <h3>Snow Removal (Residential)</h3>
+            <p>Driveways, sidewalks, and entryways cleared for safe access — per storm or seasonal plans.</p>
+          </article>
+
+          <article class="card card-accent">
+            <h3>Snow Plowing (Commercial)</h3>
+            <p>Reliable plowing for lots and lanes, plus walkway clearing to keep your business open and safe.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section alt">
+      <div class="container">
+        <h2>Our Work</h2>
+        <p class="section-sub">Real jobs from WB Lawn Masters LLC.</p>
+
+        <h3 class="subhead">Before &amp; After (Cleanup)</h3>
+        <div class="before-after">
+          <figure>
+            <figcaption>Before</figcaption>
+            <img src="https://i.postimg.cc/x8NyQpdH/IMG-6835.jpg" alt="Before cleanup" loading="lazy" />
+          </figure>
+          <figure>
+            <figcaption>After</figcaption>
+            <img src="https://i.postimg.cc/KzwptM3S/IMG-6837.jpg" alt="After cleanup" loading="lazy" />
+          </figure>
+        </div>
+
+        <h3 class="subhead">Gallery</h3>
+        <div class="gallery">
+          <img src="https://i.postimg.cc/hzLSr0P4/IMG-0974.jpg" alt="Gallery 1" loading="lazy" />
+          <img src="https://i.postimg.cc/TLMdgsGL/IMG-3119.jpg" alt="Gallery 2" loading="lazy" />
+          <img src="https://i.postimg.cc/jw0xP1K2/IMG-3185.jpg" alt="Gallery 3" loading="lazy" />
+          <img src="https://i.postimg.cc/Fd5r36mk/IMG-3190.jpg" alt="Gallery 4" loading="lazy" />
+          <img src="https://i.postimg.cc/47kfV0Z4/IMG-3342.jpg" alt="Gallery 5" loading="lazy" />
+          <img src="https://i.postimg.cc/94qX423h/IMG-3359.jpg" alt="Gallery 6" loading="lazy" />
+          <img src="https://i.postimg.cc/Q9G81zsZ/IMG-3360.jpg" alt="Gallery 7" loading="lazy" />
+          <img src="https://i.postimg.cc/62JWnPwX/IMG-3910.jpg" alt="Gallery 8" loading="lazy" />
+          <img src="https://i.postimg.cc/94qX4h6b/IMG-3916.jpg" alt="Gallery 9" loading="lazy" />
+          <img src="https://i.postimg.cc/BP3v9Vw7/IMG-4237.jpg" alt="Gallery 10" loading="lazy" />
+          <img src="https://i.postimg.cc/CZfMZg3q/IMG-4328.jpg" alt="Gallery 11" loading="lazy" />
+          <img src="https://i.postimg.cc/4YyxgtBR/IMG-4377.jpg" alt="Gallery 12" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Request a Free Estimate</h2>
+        <p class="section-sub">Tell us what you need and where you’re located in Livingston County.</p>
+
+        <p class="contact-line">
+          Call <a href="tel:15176729714">517-672-9714</a> • Email
+          <a href="mailto:wblawnmastersllc@gmail.com">wblawnmastersllc@gmail.com</a>
+        </p>
+
+        <div class="footer-meta">
+          <div><strong>Service Area:</strong> All of Livingston County</div>
+          <div><strong>Phone:</strong> <a href="tel:15176729714">517-672-9714</a></div>
+          <div><strong>Email:</strong> <a href="mailto:wblawnmastersllc@gmail.com">wblawnmastersllc@gmail.com</a></div>
+          <div class="small">Fastest quotes include photos + preferred day/time.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky bottom call-to-action bar -->
+  <div class="sticky-bar" role="navigation" aria-label="Quick actions">
+    <div class="sticky-inner">
+      <div class="sticky-left">
+        <div class="sticky-title">WB Lawn Masters LLC</div>
+        <div>Need a quote? Tap Call or Quote.</div>
+      </div>
+
+      <div class="sticky-actions">
+        <a class="btn btn-small btn-primary" href="tel:15176729714">Call Now</a>
+        <a class="btn btn-small btn-dark" href="#contact">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // nothing needed right now—kept for future
+  </script>
+</body>
+</html>
